@@ -93,26 +93,108 @@ i{
         display: flex;    
         flex-direction: row;      
         justify-content: space-around;  
-        position: relative   
     }
 
-    .dropdown ul ul{
-        display: none;        
+    .dropdown ul li{
+        position: relative;       
     }
 
-    .dropdown ul li ul:hover{ /*No aparece submenu*/
+    .dropdown ul li ul {
+        display: none;
+    }
+
+    .dropdown ul li:hover ul{ 
         display: flex;        
-        position: absolute
+        flex-direction: column;
     }
 
 }
 
+.dropdown ul li ul li:hover{ /*Pantalla pequeña*/
+    background-color: orangered;
+}
+
 
 /** Redes Socialaes**/
+#iconosRedes ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;   
+
+}
 
 
 
 /* Social y dropdown*/
+@media screen and (min-width:768px) { /*Pantalla grande*/
+    #iconosDropDown{
+        display: flex;
+    }
+
+    #iconosDropDown ul:nth-child(1){
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+    #iconosDropDown ul li ul:nth-child(2){
+        display: none;
+    }
+
+    #iconosDropDown ul li:hover ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #iconosDropDown :nth-child(2){ /*Lista de iconos*/
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;        
+    }
+       
+
+    #iconosDropDown ul li ul li:hover{ /*Pantalla pequeña*/
+        background-color: orangered;
+    }
+
+}
+@media screen and (max-width:768px) {
+    #iconosDropDown{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #iconosDropDown ul:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+
+    } 
+
+    #iconosDropDown ul:nth-child(1) li ul {
+        display: flex;
+        flex-direction: column;
+
+    } 
+
+    #iconosDropDown ul:nth-child(2){ /*Lista de iconos*/
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;        
+    } 
+
+    #iconosDropDown :nth-child(2) li{
+        width: 5%;        
+    }
+
+    #iconosDropDown ul li ul a:hover{ /*Pantalla pequeña*/
+        background-color: orangered;
+    }
+
+   
+}
+
 
 
 
